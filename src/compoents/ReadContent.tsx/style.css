@@ -1,0 +1,13 @@
+.read-content-list {
+    display: flex;
+    width: 75vw;
+    overflow: hidden;
+}
+
+.read-content-item {
+    width: 75vw;
+    height: 70vh;
+    padding: 30px;
+    list-style: none;
+    flex-shrink: 0;
+}
