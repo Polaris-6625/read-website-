@@ -1,16 +1,22 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { createMapperHooksStore } from "@apiknight/store/lib/hooks";
+import fetchCurrentPageContent from "../api/fetchCurrentPageContent";
+import { PageDataParams } from "../type/params";
 
 export interface PageData {
-  id: number;
-  title: string;
-  content: string;
+    id: number;
+    title: string;
+    content: string;
 }
 
-const pageDataStore = createMapperHooksStore<PageData[]>([
-    { id: 1, content: "第一页的内容",title: "第一页的标题" },
-    { id: 2, content: "第二页的内容",title: "第二页的标题" },
-  ],{withLocalStorage:"page-data"});
+
+const pageDataStore = createMapperHooksStore<string,PageDataParams>('', { withLocalStorage: 'page-data-new' });
 
 export const usePageData = pageDataStore.useStoreValue;
 
-export const setPageData = pageDataStore.setStoreValue;
+export const usePageDataLoading = pageDataStore.useStoreLoading;
+
+export const loadPageData = pageDataStore.loadStoreValue(
+    params => params,
+    fetchCurrentPageContent
+);

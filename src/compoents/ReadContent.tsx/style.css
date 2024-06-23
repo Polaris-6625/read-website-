@@ -1,7 +1,7 @@
 .read-content-list {
     display: flex;
     width: 75vw;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 .read-content-item {
