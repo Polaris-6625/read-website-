@@ -1,42 +1,53 @@
 import "./style.css";
 import { setCurrentIndex, useCurrentIndex } from "../../store/currentIndex";
 import { useEffect } from "react";
-import { loadPageData, usePageData } from "../../store/pagesData";
+import {
+  loadPageData,
+  usePageData,
+  usePageDataLoading,
+} from "../../store/pagesData";
 
 function ReadContent() {
+  // 订阅当前数据和页码
   const currentIndex = useCurrentIndex();
+  const loading = usePageDataLoading();
   const currentPageData = usePageData();
-  // 上一页函数
+  // 加载当前页面数据
   useEffect(() => {
-    loadPageData({ novel_id: 1, chapter_number: currentIndex ?? 1 })
-  }, [currentIndex])
+    loadPageData({ novel_id: 1, chapter_number: currentIndex ?? 1 });
+  }, [currentIndex]);
+
+  // 上一页
   const goToPreviousPage = () => {
-    setCurrentIndex(v => v - 1)
+    setCurrentIndex((v) => v - 1);
   };
 
-  // 下一页函数
+  // 下一页
   const goToNextPage = () => {
-    setCurrentIndex(v => v + 1)
+    setCurrentIndex((v) => v + 1);
   };
 
   return (
     <div>
       {/* 上一页和下一页按钮 */}
-      <button onClick={goToPreviousPage} disabled={currentIndex === 1}>上一页</button>
+      <button onClick={goToPreviousPage} disabled={currentIndex === 1}>
+        上一页
+      </button>
       <button
         onClick={goToNextPage}
-      // disabled={currentIndex === pagesData?.length}
+        // disabled={currentIndex === pagesData?.length}
       >
         下一页
       </button>
-
-      {/* 读书器每一页的内容 */}
-      <ul className="read-content-list">
-        {/* 根据当前页面数据渲染内容 */}
-        {currentPageData && (
-          <li className="read-content-item">{currentPageData}</li>
-        )}
-      </ul>
+      {loading ? (
+        <div>loading...</div>
+      ) : (
+        <ul className="read-content-list">
+          {currentPageData && (
+            <li className="read-content-item">{currentPageData}</li>
+          )}
+        </ul>
+      )}
     </div>
   );
 }
