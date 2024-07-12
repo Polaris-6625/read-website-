@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { createMapperHooksStore } from "@apiknight/store/lib/index";
+import { createMapperHooksStore } from "@apiknight/store";
 import fetchCurrentPageContent from "../api/fetchCurrentPageContent";
 import { PageDataParams } from "../type/params";
 

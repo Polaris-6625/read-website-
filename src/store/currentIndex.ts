@@ -1,4 +1,4 @@
-import {createMapperHooksStore} from "@apiknight/store/lib/index"
+import {createMapperHooksStore} from "@apiknight/store"
 
 const currentIndexRegion = createMapperHooksStore<number>(1,{withLocalStorage: 'currentIndex'});
 

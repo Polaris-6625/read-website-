@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@apiknight/store':
-        specifier: ^1.6.6
-        version: 1.6.6(less@4.2.0)(typescript@5.4.5)(webpack@5.91.0)
+        specifier: ^1.6.8
+        version: 1.6.8(less@4.2.0)(typescript@5.4.5)(webpack@5.91.0)
       react:
         specifier: ^18.2.0
         version: 18.3.1
@@ -54,8 +54,8 @@ importers:
 
 packages:
 
-  '@apiknight/store@1.6.6':
-    resolution: {integrity: sha512-hhaS0IXTOL26oUKpMOxd4B2LqObcXuZUQC9iHHW3C5K3QzY6q0mET+BM1EPYV1N3zKpF9tPvugJ2VncImvrb0A==}
+  '@apiknight/store@1.6.8':
+    resolution: {integrity: sha512-oiK6kHVm3WPc1azrF7e4K9iC+E07whuUSLEIy0+C8UtNQxSTkFbY5Wvqh6eXZLbwFrIdU99KNU5yG7TkfmeaxQ==}
 
   '@emotion/is-prop-valid@1.2.2':
     resolution: {integrity: sha512-uNsoYd37AFmaCdXlg6EYD1KaPOaRWRByMCYzbKUX4+hhMfrxdVSelShywL4JVaAeM/eHUOSprYBQls+/neX3pw==}
@@ -2126,7 +2126,7 @@ packages:
 
 snapshots:
 
-  '@apiknight/store@1.6.6(less@4.2.0)(typescript@5.4.5)(webpack@5.91.0)':
+  '@apiknight/store@1.6.8(less@4.2.0)(typescript@5.4.5)(webpack@5.91.0)':
     dependencies:
       '@types/react': 18.3.3
       '@types/react-dom': 18.3.0
